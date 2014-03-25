@@ -39,8 +39,8 @@ int main () {
   std::cout << "\nDynamic Results\n";
   for (auto i = 2; i < std::pow(2, 20) +1; i *= 2) {
     auto timeTook = solveIt(i, false);
-    foutD << i << ", " << timeTook.first << std::endl;
     std::cout << "\n Terms: " << i << " Average: " << timeTook.first << "\n";
+    foutD << i << ", " << timeTook.first << std::endl;
   }
   foutD.close();
   return 0;
@@ -49,7 +49,7 @@ int main () {
 std::pair<double, double> solveIt(long long int size, bool recursive) {
   std::vector<double> x;
   std::vector<double> y;
-  auto omegas = fft::getOmegasForSize(size * 2);
+  auto omegas = fft::getOmegasForSize(size *2);
   
   if (recursive) {
     return tools::funcEval([&] () {

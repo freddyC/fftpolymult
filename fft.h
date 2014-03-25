@@ -34,7 +34,7 @@ namespace fft
   
   std::vector<std::vector<int> > getRbsCache (int size) {
     int logN = std::log(size) / std::log(2);
-    std::vector<std::vector<int> > res(size, std::vector<int> (logN));
+    std::vector<std::vector<int> > res(size, std::vector<int> (logN +1));
     for (auto i = 0; i < size; ++i) {
       for (auto j = 0; j <= logN; ++j) {
         res[i][j] = rbs(i, logN);
